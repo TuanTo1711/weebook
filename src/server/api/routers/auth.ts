@@ -13,7 +13,7 @@ export const authRouter = createTRPCRouter({
 
   signIn: publicProcedure
     .input(z.object({ name: z.string().min(1) }))
-    .mutation(async ({ input }) => {
+    .mutation(({ input }) => {
       return input;
     }),
 });
