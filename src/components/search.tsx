@@ -1,25 +1,35 @@
 "use client";
 
-import { CloseButton, Input, Popover } from "@mantine/core";
-import { useInputState } from "@mantine/hooks";
-import { IconSearch } from "@tabler/icons-react";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import { CloseButton, Input, Kbd, Popover } from "@mantine/core";
+import { useHotkeys, useInputState } from "@mantine/hooks";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Search = () => {
   const [opened, setOpened] = useState(false);
   const [value, setValue] = useInputState("");
   // const [debounced] = useDebouncedValue(value, 500);
   // const { data } = api.book.search.useQuery(debounced);
+  const inputRef = useRef<HTMLInputElement>(null);
+  useHotkeys([["mod+K", () => inputRef?.current?.focus()]]);
 
-  const leftSection = useMemo(() => <IconSearch stroke={1.5} />, []);
+  const leftSection = useMemo(
+    () => <AiOutlineSearch stroke={"1.5"} size={25} />,
+    [],
+  );
 
   const rightSection = useMemo(
     () => (
-      <CloseButton
-        aria-label="Clear input"
-        onClick={() => setValue("")}
-        style={{ display: value ? undefined : "none" }}
-      />
+      <>
+        <CloseButton
+          aria-label="Clear input"
+          onClick={() => setValue("")}
+          style={{
+            visibility: value ? "visible" : "hidden",
+          }}
+        />
+        <Kbd>⌘ + K</Kbd>
+      </>
     ),
     [value, setValue],
   );
@@ -38,15 +48,22 @@ const Search = () => {
     >
       <Popover.Target>
         <Input
+          ref={inputRef}
+          radius={"xl"}
           value={value}
           onChange={setValue}
           leftSection={leftSection}
+          leftSectionWidth={"50"}
+          rightSectionWidth={"100"}
           rightSectionPointerEvents="all"
           rightSection={rightSection}
+          rightSectionProps={{
+            className: "mx-1",
+          }}
           onFocus={() => setOpened(true)}
           w={"100%"}
           placeholder="Seach..."
-          variant="filled"
+          variant="default"
           size="md"
         />
       </Popover.Target>

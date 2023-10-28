@@ -1,12 +1,13 @@
 "use client";
 
+import { useMemo } from "react";
 import {
   ActionIcon,
   useComputedColorScheme,
   useMantineColorScheme,
 } from "@mantine/core";
-import { IconMoon, IconSun } from "@tabler/icons-react";
-import { useMemo } from "react";
+
+import { BiSolidMoon, BiSolidSun } from "react-icons/bi";
 
 const ThemeSwitch = () => {
   const { toggleColorScheme } = useMantineColorScheme();
@@ -19,22 +20,24 @@ const ThemeSwitch = () => {
       return (
         <ActionIcon
           onClick={toggleColorScheme}
+          radius={"md"}
           variant="default"
-          size="xl"
+          size="lg"
           aria-label="Toggle color scheme"
         >
-          <IconSun className={"dark:block"} stroke={1.5} />
+          <BiSolidSun stroke={"1.5"} size={"60%"} />
         </ActionIcon>
       );
     } else {
       return (
         <ActionIcon
           onClick={toggleColorScheme}
+          radius={"md"}
           variant="default"
-          size="xl"
+          size="lg"
           aria-label="Toggle color scheme"
         >
-          <IconMoon className={"dark:block"} stroke={1.5} />
+          <BiSolidMoon stroke={"1.5"} size={"60%"} />
         </ActionIcon>
       );
     }

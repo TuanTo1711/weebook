@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+import { useCallback, useState } from "react";
 
 import {
   ActionIcon,
@@ -11,9 +13,8 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { IconHome2, IconLayout2 } from "@tabler/icons-react";
-import Link from "next/link";
-import { useCallback, useState } from "react";
+import { TbLayout2 } from "react-icons/tb";
+
 import { api } from "~/trpc/react";
 import { type Category } from "~/types";
 
@@ -86,12 +87,12 @@ const Catalog = () => {
       <Popover.Target>
         <ActionIcon
           radius={"md"}
-          variant="subtle"
+          variant="transparent"
           color="dark"
-          size="xl"
+          size="lg"
           aria-label="catalog"
         >
-          <IconLayout2 size={"sm"} />
+          <TbLayout2 size={"100%"}/>
         </ActionIcon>
       </Popover.Target>
       <Popover.Dropdown className="flex flex-row gap-x-4 py-6">
@@ -105,7 +106,6 @@ const Catalog = () => {
                   onMouseEnter={() => setActive(index)}
                   key={index}
                   label={category.name}
-                  leftSection={<IconHome2 size="1rem" stroke={1.5} />}
                   childrenOffset={28}
                 />
               );

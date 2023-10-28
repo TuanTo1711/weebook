@@ -1,11 +1,10 @@
-import { Button } from "@mantine/core";
+import { Container } from "@mantine/core";
+import Hero from "~/components/hero";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-start gap-y-4">
-      <Button color="secondary" variant="filled">
-        Button
-      </Button>
-    </div>
+    <Container my="md" size={"xl"}>
+      <Hero />
+    </Container>
   );
 }

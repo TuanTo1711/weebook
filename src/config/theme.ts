@@ -16,16 +16,16 @@ const primary: MantineColorsTuple = [
 ];
 
 const secondary: MantineColorsTuple = [
-  "#ffebff",
-  "#f5d5fc",
-  "#e6a9f3",
-  "#d779eb",
-  "#cb51e4",
-  "#c437e0",
-  "#c029df",
-  "#a91cc6",
-  "#9715b1",
-  "#840a9c",
+  "#fbe9ff",
+  "#eed0ff",
+  "#d79efd",
+  "#c06afa",
+  "#ad3df8",
+  "#a121f6",
+  "#9b10f7",
+  "#8603dd",
+  "#7800c6",
+  "#6800ae",
 ];
 
 const lightGray: MantineColorsTuple = [
