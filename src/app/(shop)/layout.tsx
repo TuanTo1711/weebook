@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Weebook - Shop",
 };
 
-export default function SiteLayout({
+export default function ShopLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -22,7 +22,14 @@ export default function SiteLayout({
         <Header />
       </AppShellHeader>
       <AppShellMain>
-        <Container size={"xl"}>{children}</Container>
+        <Container
+          size={"xl"}
+          px={{ base: "0", lg: "md" }}
+          my="md"
+          className="space-y-6 sm:space-y-8"
+        >
+          {children}
+        </Container>
       </AppShellMain>
     </AppShell>
   );

@@ -1,6 +1,11 @@
 import { Anchor, Card, Divider, Stack, Text } from "@mantine/core";
+import { type Metadata } from "next";
 import Link from "next/link";
 import { SignInForm } from "~/components/forms";
+
+export const metadata: Metadata = {
+  title: "Weebook - Login into shop",
+};
 
 const SignInPage = () => {
   return (

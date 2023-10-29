@@ -1,26 +1,34 @@
 "use client";
 
-import { Image, Card, Text, Group, Button, rem } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
+import { Badge, Card, Group, Image, Stack, Text, rem } from "@mantine/core";
+import Link from "next/link";
 import { AiOutlineStar } from "react-icons/ai";
 
 const images = [
-  "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-  "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
+  "https://cdn0.fahasa.com/media/catalog/product/2/0/201023-4.jpg?_gl=1*1kmwle2*_ga*MTc1MzE5MDgyOC4xNjk3ODc1MzI1*_ga_460L9JMC2G*MTY5ODU5MDY2Mi44LjEuMTY5ODU5MzU4MS4yNS4wLjA.*_gcl_aw*R0NMLjE2OTgzMjMzMDUuQ2p3S0NBanduT2lwQmhCUUVpd0FDeUdMdXNxeEd4X04yNnk2Qk15SHFOQm1SbS0ycDNFc0JqTmZhMDRyV281TjdtWFNjMlNkNUxnbGR4b0MzUllRQXZEX0J3RQ..*_gcl_au*MTgyMDAwODQwMi4xNjk3ODc1MzI2",
+  "https://cdn0.fahasa.com/media/catalog/product/t/h/thien_su_nha_ben_ban_gioi_han_tap_7.jpg?_gl=1*1kmwle2*_ga*MTc1MzE5MDgyOC4xNjk3ODc1MzI1*_ga_460L9JMC2G*MTY5ODU5MDY2Mi44LjEuMTY5ODU5MzU4MS4yNS4wLjA.*_gcl_aw*R0NMLjE2OTgzMjMzMDUuQ2p3S0NBanduT2lwQmhCUUVpd0FDeUdMdXNxeEd4X04yNnk2Qk15SHFOQm1SbS0ycDNFc0JqTmZhMDRyV281TjdtWFNjMlNkNUxnbGR4b0MzUllRQXZEX0J3RQ..*_gcl_au*MTgyMDAwODQwMi4xNjk3ODc1MzI2",
+  "https://cdn0.fahasa.com/media/catalog/product/t/h/thien_su_nha_ben_bia_tap_7_4.jpg?_gl=1*1kmwle2*_ga*MTc1MzE5MDgyOC4xNjk3ODc1MzI1*_ga_460L9JMC2G*MTY5ODU5MDY2Mi44LjEuMTY5ODU5MzU4MS4yNS4wLjA.*_gcl_aw*R0NMLjE2OTgzMjMzMDUuQ2p3S0NBanduT2lwQmhCUUVpd0FDeUdMdXNxeEd4X04yNnk2Qk15SHFOQm1SbS0ycDNFc0JqTmZhMDRyV281TjdtWFNjMlNkNUxnbGR4b0MzUllRQXZEX0J3RQ..*_gcl_au*MTgyMDAwODQwMi4xNjk3ODc1MzI2",
 ];
 
 export function CarouselCard() {
   const slides = images.map((image) => (
     <Carousel.Slide key={image}>
-      <Image alt="" src={image} height={220} />
+      <Image
+        height={220}
+        radius={"md"}
+        loading="lazy"
+        src={image}
+        fallbackSrc={"https://via.placeholder.com/220x220"}
+        alt={image}
+        decoding="async"
+        fit="contain"
+      />
     </Carousel.Slide>
   ));
 
   return (
-    <Card radius="md" withBorder padding="xl">
+    <Card radius="md" withBorder padding={0} pb={"sm"} className="space-y-4">
       <Card.Section>
         <Carousel
           withIndicators
@@ -31,38 +39,40 @@ export function CarouselCard() {
         </Carousel>
       </Card.Section>
 
-      <Group justify="space-between" mt="lg">
-        <Text fw={500} fz="lg">
-          Forde, Norway
-        </Text>
-
-        <Group gap={5}>
-          <AiOutlineStar style={{ width: rem(16), height: rem(16) }} />
-          <Text fz="xs" fw={500}>
-            4.78
+      <Card.Section px={"md"}>
+        <Group justify="space-between" wrap="nowrap" gap={"xs"}>
+          <Text component={Link} href={"/"} fz={"sm"} fw={400} lineClamp={2}>
+            Thiên Sứ Nhà Bên - Tập 7 - Bản Giới Hạn - Tặng Kèm Bookmark + Bìa Áo
+            Đặc Biệt + Standee Pop-Up
           </Text>
+
+          <Group gap={2} wrap="nowrap">
+            <AiOutlineStar style={{ width: rem(16), height: rem(16) }} />
+            <Text fz="xs" fw={500}>
+              5
+            </Text>
+          </Group>
         </Group>
-      </Group>
+      </Card.Section>
 
-      <Text fz="sm" c="dimmed" mt="sm">
-        Relax, rejuvenate and unplug in this unique contemporary Birdbox. Feel
-        close to nature in ultimate comfort. Enjoy the view of the epic mountain
-        range of Blegja and the Førdefjord.
-      </Text>
-
-      <Group justify="space-between" mt="md">
-        <div>
-          <Text fz="xl" span fw={500}>
-            397$
-          </Text>
-          <Text span fz="sm" c="dimmed">
-            {" "}
-            / night
-          </Text>
-        </div>
-
-        <Button radius="md">Book now</Button>
-      </Group>
+      <Card.Section px={"md"}>
+        <Group justify="space-between" wrap="nowrap">
+          <Stack gap={0}>
+            <Text fz={{ base: "sm", lg: "xl" }} fw={500} c={"red"}>
+              95,000đ
+            </Text>
+            <Text td={"line-through"} fz="sm" span c={"dimmed"}>
+              100,000 đ
+            </Text>
+          </Stack>
+          <Stack gap={"xs"} align="end" justify="flex-end" h={"100%"}>
+            <Badge color="yellow" size="sm">
+              5%
+            </Badge>
+            <Badge color="gray">Tập 7</Badge>
+          </Stack>
+        </Group>
+      </Card.Section>
     </Card>
   );
 }

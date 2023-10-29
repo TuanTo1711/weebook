@@ -11,6 +11,7 @@ import {
   Text,
   TextInput,
 } from "@mantine/core";
+import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 
@@ -30,13 +31,7 @@ const SignIn = () => {
             Mật khẩu
           </Text>
 
-          <Anchor
-            href="/forget-password"
-            onClick={(event) => event.preventDefault()}
-            pt={2}
-            fw={500}
-            fz="xs"
-          >
+          <Anchor component={Link} href="/recovery" pt={2} fw={500} fz="xs">
             Forgot your password?
           </Anchor>
         </Group>
@@ -47,15 +42,7 @@ const SignIn = () => {
         />
       </Stack>
 
-      <Button
-        fullWidth
-        variant="gradient"
-        gradient={{
-          from: "#FF1CF7",
-          to: "#b249f8",
-          deg: 90,
-        }}
-      >
+      <Button fullWidth variant="filled" color="secondary">
         Vào
       </Button>
       <Divider label="Hoặc tiếp tục với" labelPosition="center" />

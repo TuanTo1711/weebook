@@ -6,7 +6,7 @@ await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  images: { domains: ["https://images.unsplash.com"] },
+  images: { domains: ["cdn0.fahasa.com"] },
 };
 
 export default config;

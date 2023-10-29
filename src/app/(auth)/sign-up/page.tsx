@@ -1,6 +1,11 @@
 import { Anchor, Card, Divider, Stack, Text } from "@mantine/core";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SignUpForm } from "~/components/forms";
+
+export const metadata: Metadata = {
+  title: "Weebook - Register as new customer",
+};
 
 const SignUpPage = () => {
   return (

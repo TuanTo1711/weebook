@@ -18,6 +18,7 @@ const WeebookLogo = () => {
     >
       <Image alt="Logo" width={80} height={80} src="/favicon.ico" />
       <Text
+        visibleFrom="md"
         variant="gradient"
         gradient={{
           from: colorScheme === "light" ? "lightGray.7" : "lightGray.2",

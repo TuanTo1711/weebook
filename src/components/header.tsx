@@ -1,7 +1,6 @@
 "use client";
 
-import { AppShell, Burger, Container, Flex } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { AppShell, Container, Flex } from "@mantine/core";
 import Cart from "./cart";
 import Catalog from "./catalog";
 import WeebookLogo from "./logo";
@@ -10,8 +9,6 @@ import ThemeSwitch from "./theme-switch";
 import UserMenu from "./user-menu";
 
 export function Header() {
-  const [opened, { toggle }] = useDisclosure();
-
   return (
     <Container size={"xl"}>
       <Flex justify="space-between" h={"100%"} align={"center"}>
@@ -34,7 +31,6 @@ export function Header() {
           <Cart />
           <ThemeSwitch />
           <UserMenu />
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         </AppShell.Section>
       </Flex>
     </Container>

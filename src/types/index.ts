@@ -12,6 +12,7 @@ export type ResultResponse<T> = {
 export type Category = {
   id: number;
   name: string;
+  parent?: Category;
   children?: Category[];
 };
 
@@ -21,15 +22,15 @@ export type BookInfo = {
   id: number;
   name: string;
   price: number;
-  discount: number;
+  discount?: number;
   supplier: string;
   thumbnail: string;
-  authorsNames: string[];
+  authorsNames?: string[];
   gallery: string[];
-  translator: string;
-  publisher: string;
-  publishYear: string;
-  language: string;
+  translator?: string;
+  publisher?: string;
+  publishYear?: string;
+  language?: string;
   size: string;
   content: string;
   weight: string;
