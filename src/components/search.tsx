@@ -67,9 +67,7 @@ const Search = () => {
           size="md"
         />
       </Popover.Target>
-      <Popover.Dropdown>
-        <div>Pop content</div>
-      </Popover.Dropdown>
+      <Popover.Dropdown> </Popover.Dropdown>
     </Popover>
   );
 };

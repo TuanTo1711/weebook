@@ -11,7 +11,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid min-h-screen grid-cols-1 overflow-hidden md:grid-cols-3 lg:grid-cols-2">
+    <div className="grid min-h-screen grid-cols-1 items-center overflow-hidden md:grid-cols-3 lg:grid-cols-2">
       <div className="relative aspect-video h-full w-full">
         <Image
           src="/auth-bg.jpg"
@@ -26,7 +26,7 @@ export default function AuthLayout({
           <WeebookLogo />
         </div>
       </div>
-      <main className="container absolute top-1/2 col-span-1 flex -translate-y-1/2 items-center justify-center p-6 md:static md:top-0 md:col-span-2 md:flex md:translate-y-0 lg:col-span-1">
+      <main className="container absolute col-span-1 flex max-w-2xl items-center justify-center px-6 md:static md:top-0 md:col-span-2 md:flex md:translate-y-0 lg:col-span-1">
         {children}
       </main>
     </div>

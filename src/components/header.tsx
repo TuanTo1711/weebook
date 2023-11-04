@@ -2,11 +2,12 @@
 
 import { AppShell, Container, Flex } from "@mantine/core";
 import Cart from "./cart";
-import Catalog from "./catalog";
+import Categories from "./categories";
 import WeebookLogo from "./logo";
 import Search from "./search";
 import ThemeSwitch from "./theme-switch";
 import UserMenu from "./user-menu";
+import Notifications from "./notifications";
 
 export function Header() {
   return (
@@ -19,7 +20,7 @@ export function Header() {
 
         {/* Search area */}
         <AppShell.Section className="hidden basis-full items-center gap-4 sm:flex">
-          <Catalog />
+          <Categories />
           <Search />
         </AppShell.Section>
 
@@ -28,6 +29,7 @@ export function Header() {
           h={"100%"}
           className="flex basis-1/3 items-center justify-end gap-x-4"
         >
+          <Notifications />
           <Cart />
           <ThemeSwitch />
           <UserMenu />

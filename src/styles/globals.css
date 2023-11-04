@@ -1,5 +1,6 @@
-/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 @import "@mantine/core/styles.css";
 @import "@mantine/carousel/styles.css";
+@import "@mantine/tiptap/styles.css";
+@import "react-toastify/dist/ReactToastify.css";

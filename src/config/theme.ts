@@ -29,16 +29,16 @@ const secondary: MantineColorsTuple = [
 ];
 
 const lightGray: MantineColorsTuple = [
-  "#fef2f5",
-  "#eae6e7",
-  "#cdcdcd",
-  "#b2b2b2",
-  "#9a9a9a",
-  "#8b8b8b",
-  "#848484",
-  "#717171",
-  "#676465",
-  "#5e5457",
+  "#f0f6fb4d",
+  "#e5e7ea4d",
+  "#cacccf4d",
+  "#acb0b54d",
+  "#93989f4d",
+  "#8389924d",
+  "#7a828c4d",
+  "#676f7b4d",
+  "#5b636f4d",
+  "#4b55644d",
 ];
 
 const darkGray: MantineColorsTuple = [
@@ -67,6 +67,19 @@ const darkYellow: MantineColorsTuple = [
   "#af4a00",
 ];
 
+const lightYellow: MantineColorsTuple = [
+  "#f9f7f1",
+  "#eeece4",
+  "#ddd6c3",
+  "#ccc09f",
+  "#bdad81",
+  "#b3a06c",
+  "#af9a61",
+  "#998650",
+  "#887745",
+  "#766637",
+];
+
 export const theme = createTheme({
   primaryColor: "primary",
   cursorType: "pointer",
@@ -76,5 +89,6 @@ export const theme = createTheme({
     lightGray,
     darkGray,
     darkYellow,
+    lightYellow,
   },
 });

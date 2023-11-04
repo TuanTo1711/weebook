@@ -1,29 +1,31 @@
 "use client";
 
 import { ActionIcon, Avatar, Menu, Text } from "@mantine/core";
-import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useCallback, useMemo } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
 import { useRouter } from "next/navigation";
 import { guest, logged } from "~/config/menu";
+import { useAppDispatch, useAppSelector } from "~/redux/hooks";
+import { logout } from "~/redux/feature/authSlice";
 
 const UserMenu = () => {
   const router = useRouter();
-  const { data: session } = useSession();
-  const user = session?.user;
+  const dispatch = useAppDispatch();
+  const auth = useAppSelector((state) => state.auth);
+  const user = auth.user;
 
   const handleItemSeleted = useCallback(
-    async (url: string | undefined) => {
+    (url: string | undefined) => {
       if (!url) {
-        await signOut({ redirect: false });
+        dispatch(logout());
         return;
       }
 
       router.push(url);
     },
-    [router],
+    [router, dispatch],
   );
 
   const items = useMemo(() => {
@@ -78,7 +80,11 @@ const UserMenu = () => {
     >
       <Menu.Target>
         {user ? (
-          <Avatar src={user.image} alt="it's me" className="cursor-pointer" />
+          <Avatar
+            src={user.avatarUrl}
+            alt="it's me"
+            className="cursor-pointer"
+          />
         ) : (
           <ActionIcon
             variant="filled"
@@ -86,7 +92,7 @@ const UserMenu = () => {
             size={"lg"}
             color={"secondary"}
           >
-            <AiOutlineMenu size={"60%"}/>
+            <AiOutlineMenu size={"60%"} />
           </ActionIcon>
         )}
       </Menu.Target>

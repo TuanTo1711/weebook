@@ -1,14 +1,15 @@
 import "~/styles/globals.css";
 
-import { ColorSchemeScript } from "@mantine/core";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import clsx from "clsx";
 import { type Metadata } from "next";
 import { headers } from "next/headers";
 
-import { fontSans } from "~/config/fonts";
+import { fontLogo, fontMono, fontSans } from "~/config/fonts";
 import { siteConfig } from "~/config/site";
+import { theme } from "~/config/theme";
 import { TRPCReactProvider } from "~/trpc/react";
-import Providers from "./_providers";
+import ClientProvider from "./_providers";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -28,12 +29,16 @@ export default function RootLayout({
       </head>
       <body
         className={clsx(
-          "min-h-screen scroll-smooth antialiased",
+          "min-h-screen scroll-smooth font-sans antialiased",
           fontSans.variable,
+          fontLogo.variable,
+          fontMono.variable,
         )}
       >
         <TRPCReactProvider headers={headers()}>
-          <Providers>{children}</Providers>
+          <MantineProvider theme={theme}>
+            <ClientProvider>{children}</ClientProvider>
+          </MantineProvider>
         </TRPCReactProvider>
       </body>
     </html>

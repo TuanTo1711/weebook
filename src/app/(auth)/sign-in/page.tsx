@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const SignInPage = () => {
   return (
-    <section className="container grid max-w-lg flex-1 items-center gap-8 pb-8 pt-6 md:py-8">
+    <section className="grid max-w-lg flex-1 items-center gap-8 pb-8 pt-6 md:py-8">
       <Card
         radius={"lg"}
         shadow="lg"

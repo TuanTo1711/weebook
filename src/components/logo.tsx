@@ -1,15 +1,14 @@
 "use client";
 
 import { Anchor, Image, Text, useMantineColorScheme } from "@mantine/core";
-import { useHotkeys } from "@mantine/hooks";
 import clsx from "clsx";
 import Link from "next/link";
 import { fontLogo } from "~/config/fonts";
 import { siteConfig } from "~/config/site";
 
 const WeebookLogo = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  useHotkeys([["mod+E", () => toggleColorScheme()]]);
+  const { colorScheme } = useMantineColorScheme();
+
   return (
     <Anchor
       className="flex cursor-pointer items-center gap-x-2 no-underline"
